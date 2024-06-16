@@ -1,0 +1,83 @@
+@event:CHAN_UTIL_WITH_INT, 0x66263e9e, Seqn:0x   5, 16 channels, NOTLAST
+
+#eventdata: 0 Channel   1: Non-wifi:   0% Wi-fi:  25% Total:  25%
+
+#eventdata: 1 Channel   2: Non-wifi:   0% Wi-fi:  25% Total:  25%
+
+#eventdata: 2 Channel   3: Non-wifi:   0% Wi-fi:  25% Total:  25%
+
+#eventdata: 3 Channel   4: Non-wifi:   0% Wi-fi:  25% Total:  25%
+
+#eventdata: 4 Channel   5: Non-wifi:   0% Wi-fi:  57% Total:  57%
+
+#eventdata: 5 Channel   6: Non-wifi:   0% Wi-fi:  27% Total:  27%
+
+#eventdata: 6 Channel   7: Non-wifi:   0% Wi-fi:  27% Total:  27%
+
+#eventdata: 7 Channel   8: Non-wifi:   0% Wi-fi:  54% Total:  54%
+
+#eventdata: 8 Channel   9: Non-wifi:   0% Wi-fi:  54% Total:  54%
+
+#eventdata: 9 Channel  10: Non-wifi:   0% Wi-fi:  54% Total:  54%
+
+#eventdata:10 Channel  11: Non-wifi:   0% Wi-fi:  54% Total:  54%
+
+#eventdata:11 Channel  12: Non-wifi:   0% Wi-fi:  35% Total:  35%
+
+#eventdata:12 Channel  13: Non-wifi:   0% Wi-fi:  33% Total:  33%
+
+#eventdata:13 Channel  14: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:14 Channel  36: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:15 Channel  40: Non-wifi:   0% Wi-fi:  15% Total:  15%
+
+@event:CHAN_UTIL_WITH_INT, 0x66263e9e, Seqn:0x   5, 16 channels, NOTLAST
+
+#eventdata: 0 Channel  44: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 1 Channel  48: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 2 Channel  52: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 3 Channel  56: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 4 Channel  60: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 5 Channel  64: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 6 Channel 100: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 7 Channel 104: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 8 Channel 108: Non-wifi:   0% Wi-fi:  10% Total:  10%
+
+#eventdata: 9 Channel 112: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:10 Channel 116: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:11 Channel 120: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:12 Channel 124: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:13 Channel 128: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:14 Channel 132: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata:15 Channel 136: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+@event:CHAN_UTIL_WITH_INT, 0x66263e9e, Seqn:0x   5, 7 channels, LAST
+
+#eventdata: 0 Channel 140: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 1 Channel 144: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 2 Channel 149: Non-wifi:   0% Wi-fi:   0% Total:   0%
+
+#eventdata: 3 Channel 153: Non-wifi:   0% Wi-fi:   6% Total:   6%
+
+#eventdata: 4 Channel 157: Non-wifi:   0% Wi-fi:   1% Total:   1%
+
+#eventdata: 5 Channel 161: Non-wifi:   0% Wi-fi:   4% Total:   4%
+
+#eventdata: 6 Channel 165: Non-wifi:   0% Wi-fi:   0% Total:   0%

@@ -1,4 +1,6 @@
 import ssh
+import parse_airiq
+import draw_chart
 
 hostname = "192.168.50.1"
 username = "admin"
