@@ -1,32 +1,34 @@
-from threading import Thread, Event
-from time import sleep
-import time
-
-event = Event()
-print(time.time())
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.collections import PolyCollection
 
 
-def modify_variable(var):
-    while True:
-        event.wait()
-        for i in range(len(var)):
-            var[i] += 1
-        event.clear()
-    print("Stop printing")
+def sierpinski(n):
+    def quotientAndRemainderZero(elem, n):
+        quotient = elem // n
+        remainder = elem % n
+        return quotient & remainder == 0
+
+    quotientAndRemainderZero = np.frompyfunc(quotientAndRemainderZero, 2, 1)
+
+    nums = np.arange(n**2)
+    nums = nums[np.where(quotientAndRemainderZero(nums, n))]
+    return (nums % n, nums // n)
 
 
-my_var = [1, 2, 3]
-t1 = Thread(target=modify_variable, args=(my_var,))
-t1.start()
-t2 = Thread(target=modify_variable, args=(my_var,))
-t2.start()
-while True:
-    try:
-        print(my_var)
-        sleep(1)
-    except KeyboardInterrupt:
-        event.set()
-        continue
-t1.join()
-t2.join()
-print(my_var)
+# 在每個 x, y 建立一個三角形
+def tri(x, y):
+    return [[x, y], [x + 1, y], [x, y + 1]]
+
+
+tri = np.frompyfunc(tri, 2, 1)
+
+n = 32
+x, y = sierpinski(n)
+
+ax = plt.gca()
+print(tri(x, y))
+ax.add_collection(PolyCollection(tri(x, y)))
+ax.set_xlim([0, n])
+ax.set_ylim([0, n])
+plt.show()

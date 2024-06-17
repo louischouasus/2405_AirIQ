@@ -2,6 +2,7 @@ import tkinter as tk
 import matplotlib.pyplot as plt
 from matplotlib.pylab import mpl
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.collections import PolyCollection
 import sys
 import numpy as np
 import random
@@ -12,28 +13,34 @@ class Graph(tk.Frame):
     def __init__(self, master: tk.Frame = None):
         super().__init__(master)
         self.master = master
-        self.fig, self.ax = plt.subplots(2, 2, figsize=(8, 6))
-        self.ax[0][0].plot([1, 1.4, 3.5, 4], [1, 4, 9, 16])
-        x = np.array(["A", "B", "C", "D"])
-        y = np.array([12, 22, 6, 18])
-        self.ax[1][1].bar(x, y, color=["#4CAF50", "red", "hotpink", "#556B2F"])
-        self.canvas = FigureCanvasTkAgg(self.fig, root)
-        self.canvas.draw()
-        self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-        self.toolbar = NavigationToolbar2Tk(self.canvas, root)
-        self.toolbar.update()
-        self.canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        self.ax = plt.gca()
         master.protocol("WM_DELETE_WINDOW", self.closeWindow)
         self.update()
-        self.data = [10]
 
     def closeWindow(self):
         sys.exit()
 
     def update_data(self):
-        self.data.append(self.data[-1] + random.randint(-3, 3))
-        self.ax[0][1].clear()
-        self.ax[0][1].plot([i for i in range(len(self.data))], self.data)
+        self.ax.clear()
+        self.ax.add_collection(
+            PolyCollection(
+                [[[0, 0], [1, 0], [0, 1]]],
+                facecolor=(1, 0, 0),
+                edgecolor=(0, 0, 0),
+                linewidth=1,
+            ),
+        )
+        self.ax.add_collection(
+            PolyCollection(
+                [[[1, 0], [1, 1], [0, 1]]],
+                facecolor=(0, 1, 0),
+                edgecolor=(0, 0, 0),
+                linewidth=1,
+            ),
+        )
+        self.ax.set_xlim([0, 36])
+        self.ax.set_ylim([0, 10])
+        plt.show()
 
 
 root = tk.Tk()
@@ -41,7 +48,6 @@ app = Graph(master=root)
 while True:
     app.update_data()
     app.update()
-    app.canvas.draw()
     time.sleep(1)
 
 app.mainloop()
