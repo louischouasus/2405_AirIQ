@@ -89,7 +89,7 @@ class Graph:
                             [t + 1, channel_index + 1],
                         ]
                     ],
-                    facecolor=(0.9, 0.9 - v / 120, 0.9 - v / 120),
+                    facecolor=(0.9, 0.9 - v / 112, 0.9 - v / 112),
                     edgecolor=(0, 0, 0),
                     linewidth=0.5,
                 ),
@@ -111,21 +111,9 @@ class Graph:
                             [t + 1, channel_index + 1],
                         ]
                     ],
-                    facecolor=(0.9 - v / 120, 0.9, 0.9 - v / 120),
+                    facecolor=(0.9 - v / 112, 0.9, 0.9 - v / 112),
                     edgecolor=(0, 0, 0),
                     linewidth=0.5,
                 ),
             )
             t += 1
-
-
-app = Graph()
-while True:
-    with open("AirIQ.log", "r") as f:
-        log = f.read()
-    data = parse_airiq.parse_airiq(log)
-    print(data.keys())
-    app.update_data(data)
-    time.sleep(1)
-
-app.mainloop()

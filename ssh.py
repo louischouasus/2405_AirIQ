@@ -16,8 +16,8 @@ def connect(hostname: str, username: str, password: str) -> paramiko.SSHClient:
 
 def command(client: paramiko.SSHClient, cmd: str):
     stdin, stdout, stderr = client.exec_command(cmd)
-    print(stdout.read().decode())
-    return stdout.read().decode()
+    for line in iter(lambda: stdout.readline(2048), ""):
+        print(line)
 
 
 def close(client: paramiko.SSHClient):
