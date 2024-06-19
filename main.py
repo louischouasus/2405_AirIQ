@@ -16,7 +16,7 @@ if __name__ == "__main__":
     log = manager.Value(c_wchar_p, "")
 
     telnet_read = multiprocessing.Process(
-        target=telnet.command_offline,
+        target=telnet.command,
         args=(
             client,
             "airiq_app -i wl0 -phy_mode 4x4 -d 1000 -c 50 -b -int -print_events",
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         try:
             print("main", log.value)
             log_lock.acquire()
-            noise = parse_airiq.parse_airiq_offline(log)
+            noise = parse_airiq.parse_airiq(log)
             log.value = ""
             log_lock.release()
             app.update_data(noise)

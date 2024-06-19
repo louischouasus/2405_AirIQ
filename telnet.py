@@ -11,10 +11,11 @@ def connect(hostname: str, username: str, password: str) -> telnetlib.Telnet:
         client.read_until(b"Password")
         client.write(password.encode("ascii") + b"\n")
         print("login successed")
+        client.write("airiq_service -d".encode("ascii") + b"\n")
+        time.sleep(0.5)
         return client
     except Exception as e:
         print("Connection failed: ", e)
-        return None
 
 
 def command(
@@ -24,7 +25,8 @@ def command(
     while True:
         try:
             log_lock.acquire()
-            log += client.read_until(b"\n")
+            log.value += client.read_until(b"\n").decode("ascii")
+            print(log.value)
             log_lock.release()
         except KeyboardInterrupt:
             client.write("\x03\n")
