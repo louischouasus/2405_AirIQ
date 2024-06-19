@@ -1,11 +1,11 @@
 import tkinter as tk
 import matplotlib.pyplot as plt
-from matplotlib.pylab import mpl
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.collections import PolyCollection
+from matplotlib.animation import FuncAnimation
 import sys
 import numpy as np
 import random
+import parse_airiq
 import time
 
 channel_list = [
@@ -69,24 +69,63 @@ class Graph:
         self.ax.set_yticks(range(len(channel_list)), channel_list, size="small")
         self.ax.set_ylim([0, len(channel_list)])
         self.ax.set_xlim([0, TIME_LENGTH])
+        for channel in noise:
+            self.add_non_wifi(channel, noise[channel]["non_wifi"][-TIME_LENGTH:])
+            self.add_wifi(channel, noise[channel]["wifi"][-TIME_LENGTH:])
+        plt.pause(1)
 
-        plt.show()
+    def add_non_wifi(self, channel: int, value: list):
+        channel_index = channel_list.index(int(channel))
+        if len(value) < TIME_LENGTH:
+            value = [0] * (TIME_LENGTH - len(value)) + value
+        t = 0
+        for v in value:
+            self.ax.add_collection(
+                PolyCollection(
+                    [
+                        [
+                            [t, channel_index],
+                            [t, channel_index + 1],
+                            [t + 1, channel_index + 1],
+                        ]
+                    ],
+                    facecolor=(0.9, 0.9 - v / 120, 0.9 - v / 120),
+                    edgecolor=(0, 0, 0),
+                    linewidth=0.5,
+                ),
+            )
+            t += 1
 
-    def add_non_wifi(self, channel: int, value: int, time: int):
-
-        self.ax.add_collection(
-            PolyCollection(
-                [[[0, 0], [1, 0], [0, 1]]],
-                facecolor=(1, 0, 0),
-                edgecolor=(0, 0, 0),
-                linewidth=1,
-            ),
-        )
+    def add_wifi(self, channel: int, value: int):
+        channel_index = channel_list.index(int(channel))
+        if len(value) < TIME_LENGTH:
+            value = [0] * (TIME_LENGTH - len(value)) + value
+        t = 0
+        for v in value:
+            self.ax.add_collection(
+                PolyCollection(
+                    [
+                        [
+                            [t, channel_index],
+                            [t + 1, channel_index],
+                            [t + 1, channel_index + 1],
+                        ]
+                    ],
+                    facecolor=(0.9 - v / 120, 0.9, 0.9 - v / 120),
+                    edgecolor=(0, 0, 0),
+                    linewidth=0.5,
+                ),
+            )
+            t += 1
 
 
 app = Graph()
 while True:
-    app.update_data()
+    with open("AirIQ.log", "r") as f:
+        log = f.read()
+    data = parse_airiq.parse_airiq(log)
+    print(data.keys())
+    app.update_data(data)
     time.sleep(1)
 
 app.mainloop()

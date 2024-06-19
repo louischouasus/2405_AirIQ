@@ -1,48 +1,48 @@
 @event:CHAN_UTIL_WITH_INT, 0x66263e9e, Seqn:0x   5, 16 channels, NOTLAST
 
-#eventdata: 0 Channel   1: Non-wifi:   0% Wi-fi:  25% Total:  25%
+#eventdata: 0 Channel   1: Non-wifi:   100% Wi-fi:  100% Total:  25%
 
-#eventdata: 1 Channel   2: Non-wifi:   0% Wi-fi:  25% Total:  25%
+#eventdata: 1 Channel   2: Non-wifi:   0% Wi-fi:  10% Total:  25%
 
-#eventdata: 2 Channel   3: Non-wifi:   0% Wi-fi:  25% Total:  25%
+#eventdata: 2 Channel   3: Non-wifi:   0% Wi-fi:  20% Total:  25%
 
-#eventdata: 3 Channel   4: Non-wifi:   0% Wi-fi:  25% Total:  25%
+#eventdata: 3 Channel   4: Non-wifi:   0% Wi-fi:  30% Total:  25%
 
-#eventdata: 4 Channel   5: Non-wifi:   0% Wi-fi:  57% Total:  57%
+#eventdata: 4 Channel   5: Non-wifi:   0% Wi-fi:  40% Total:  57%
 
-#eventdata: 5 Channel   6: Non-wifi:   0% Wi-fi:  27% Total:  27%
+#eventdata: 5 Channel   6: Non-wifi:   0% Wi-fi:  50% Total:  27%
 
-#eventdata: 6 Channel   7: Non-wifi:   0% Wi-fi:  27% Total:  27%
+#eventdata: 6 Channel   7: Non-wifi:   0% Wi-fi:  60% Total:  27%
 
-#eventdata: 7 Channel   8: Non-wifi:   0% Wi-fi:  54% Total:  54%
+#eventdata: 7 Channel   8: Non-wifi:   0% Wi-fi:  70% Total:  54%
 
-#eventdata: 8 Channel   9: Non-wifi:   0% Wi-fi:  54% Total:  54%
+#eventdata: 8 Channel   9: Non-wifi:   0% Wi-fi:  80% Total:  54%
 
-#eventdata: 9 Channel  10: Non-wifi:   0% Wi-fi:  54% Total:  54%
+#eventdata: 9 Channel  10: Non-wifi:   0% Wi-fi:  90% Total:  54%
 
-#eventdata:10 Channel  11: Non-wifi:   0% Wi-fi:  54% Total:  54%
+#eventdata:10 Channel  11: Non-wifi:   0% Wi-fi:  100% Total:  54%
 
-#eventdata:11 Channel  12: Non-wifi:   0% Wi-fi:  35% Total:  35%
+#eventdata:11 Channel  12: Non-wifi:   100% Wi-fi:  100% Total:  35%
 
-#eventdata:12 Channel  13: Non-wifi:   0% Wi-fi:  33% Total:  33%
+#eventdata:12 Channel  13: Non-wifi:   90% Wi-fi:  0% Total:  33%
 
-#eventdata:13 Channel  14: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata:13 Channel  14: Non-wifi:   80% Wi-fi:   0% Total:   0%
 
-#eventdata:14 Channel  36: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata:14 Channel  36: Non-wifi:   70% Wi-fi:   0% Total:   0%
 
-#eventdata:15 Channel  40: Non-wifi:   0% Wi-fi:  15% Total:  15%
+#eventdata:15 Channel  40: Non-wifi:   60% Wi-fi:  15% Total:  15%
 
 @event:CHAN_UTIL_WITH_INT, 0x66263e9e, Seqn:0x   5, 16 channels, NOTLAST
 
-#eventdata: 0 Channel  44: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata: 0 Channel  44: Non-wifi:   50% Wi-fi:   0% Total:   0%
 
-#eventdata: 1 Channel  48: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata: 1 Channel  48: Non-wifi:   40% Wi-fi:   0% Total:   0%
 
-#eventdata: 2 Channel  52: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata: 2 Channel  52: Non-wifi:   30% Wi-fi:   0% Total:   0%
 
-#eventdata: 3 Channel  56: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata: 3 Channel  56: Non-wifi:  20% Wi-fi:   0% Total:   0%
 
-#eventdata: 4 Channel  60: Non-wifi:   0% Wi-fi:   0% Total:   0%
+#eventdata: 4 Channel  60: Non-wifi:   10% Wi-fi:   0% Total:   0%
 
 #eventdata: 5 Channel  64: Non-wifi:   0% Wi-fi:   0% Total:   0%
 
