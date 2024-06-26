@@ -48,6 +48,9 @@ channel_list = [
     157,
     161,
     165,
+    169,
+    173,
+    177,
 ]
 
 TIME_LENGTH = 10
@@ -64,7 +67,7 @@ class Graph:
     def closeWindow(self):
         sys.exit()
 
-    def update_data(self, noise: dict[dict[list]]):
+    def update_data(self, noise: dict[dict[list]], current_channel: list[int]):
         self.ax.clear()
         self.ax.set_yticks(range(len(channel_list)), channel_list, size="small")
         self.ax.set_ylim([0, len(channel_list)])
@@ -117,3 +120,22 @@ class Graph:
                 ),
             )
             t += 1
+
+    def add_currenct_channel(self, current_channel: list[int]):
+        # add a light blue rectangle to highlight the current channel
+        for channel in current_channel:
+            self.ax.add_collection(
+                PolyCollection(
+                    [
+                        [
+                            [0, channel_list.index(channel)],
+                            [TIME_LENGTH, channel_list.index(channel)],
+                            [TIME_LENGTH, channel_list.index(channel) + 1],
+                            [0, channel_list.index(channel) + 1],
+                        ]
+                    ],
+                    facecolor=(0.8, 0.8, 1),
+                    edgecolor=(0, 0, 0),
+                    linewidth=0.5,
+                ),
+            )

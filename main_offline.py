@@ -1,4 +1,4 @@
-import telnet
+import telnet_funcs
 import multiprocessing
 import draw_chart
 import parse_airiq
@@ -15,8 +15,8 @@ if __name__ == "__main__":
     manager = multiprocessing.Manager()
     log = manager.Value(c_wchar_p, "")
 
-    telnet_read = multiprocessing.Process(
-        target=telnet.command_offline,
+    telnet_airiq = multiprocessing.Process(
+        target=telnet_funcs.command_offline,
         args=(
             "a",
             "airiq_app -i wl0 -phy_mode 4x4 -d 1000 -c 50 -b -int -print_events",
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         ),
     )
     time.sleep(1)
-    telnet_read.start()
+    telnet_airiq.start()
     app = draw_chart.Graph()
     while True:
         try:
@@ -39,4 +39,4 @@ if __name__ == "__main__":
             pass
             break
 
-    telnet_read.join()
+    telnet_airiq.join()

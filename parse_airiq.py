@@ -42,11 +42,15 @@ channel_list = [
     157,
     161,
     165,
+    169,
+    173,
+    177,
 ]
 
 
-def parse_airiq(log: list):
-    tmp = log.value
+def parse_airiq(log):
+    tmp = log["airiq"]
+    log["airiq"] = ""
     lines = regex.split("\n", tmp)
     for line in lines:
         print(line)
