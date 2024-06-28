@@ -8,7 +8,7 @@ import random
 import parse_airiq
 import time
 
-channel_list = [
+channel_list_2G = [
     1,
     2,
     3,
@@ -23,6 +23,8 @@ channel_list = [
     12,
     13,
     14,
+]
+channel_list_5G = [
     36,
     40,
     44,
