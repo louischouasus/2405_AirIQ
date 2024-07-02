@@ -27,11 +27,10 @@ def command(
 ):
     # write a command and wait for its output once
     client.write(cmd.encode("ascii") + b"\n")
-    # time.sleep(0.2)
+    time.sleep(0.1)
     try:
         log_lock.acquire()
         logdict[logname] += client.read_very_eager().decode("ascii")
-        print(logdict[logname])
         log_lock.release()
     except KeyboardInterrupt:
         client.write("\x03\n")
