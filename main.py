@@ -4,21 +4,14 @@ import multiprocessing.synchronize
 import telnet_funcs
 import telnetlib
 import multiprocessing
-import draw_tk
 import parse_airiq
 import parse_wifistat
 import time
-from ctypes import c_wchar_p
 
 import tkinter as tk
-import matplotlib.pyplot as plt
 from matplotlib.collections import PolyCollection
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-from matplotlib.animation import FuncAnimation
 from matplotlib.figure import Figure
-import sys
-import pandas as pd
-import numpy as np
 import time
 import random
 
