@@ -76,7 +76,9 @@ class Graph_txop(tk.Frame):
 
     def update_txop(self, txop: dict[dict[list]]):
         self.ax.clear()
-        self.ax.set_yticks([i for i in range(0, 101, 10)], size="small")
+        self.ax.set_yticks(
+            [i for i in range(0, 101, 10)],
+        )
         self.ax.set_ylim([0, 100])
         self.ax.set_xlim([0, TIME_LENGTH])
         self.ax.text(13, 30, "TXop", fontsize=30)
@@ -101,7 +103,9 @@ class Graph_util(tk.Frame):
 
     def update_util(self, noise: dict[dict[list]]):
         self.ax.clear()
-        self.ax.set_yticks([i for i in range(0, 101, 10)], size="small")
+        self.ax.set_yticks(
+            [i for i in range(0, 101, 10)],
+        )
         self.ax.set_ylim([0, 100])
         self.ax.set_xlim([0, TIME_LENGTH])
         self.ax.text(12, 30, "Channel usage", fontsize=30)
@@ -134,7 +138,6 @@ class Graph_noise(tk.Frame):
         self.ax.set_yticks(
             range(len(channel_list[current_band])),
             channel_list[current_band],
-            size="small",
         )
         self.ax.set_ylim([0, len(channel_list[current_band])])
         self.ax.set_xlim([0, TIME_LENGTH])

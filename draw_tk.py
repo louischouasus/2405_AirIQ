@@ -80,7 +80,6 @@ class Graph_noise(tk.Frame):
         self.ax.set_yticks(
             range(len(channel_list[current_band])),
             channel_list[current_band],
-            size="small",
         )
         self.ax.set_ylim([0, len(channel_list[current_band])])
         self.ax.set_xlim([0, TIME_LENGTH])

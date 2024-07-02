@@ -71,7 +71,10 @@ class Graph:
 
     def update_data(self, noise: dict[dict[list]], current_channel: list[int]):
         self.ax.clear()
-        self.ax.set_yticks(range(len(channel_list)), channel_list, size="small")
+        self.ax.set_yticks(
+            range(len(channel_list)),
+            channel_list,
+        )
         self.ax.set_ylim([0, len(channel_list)])
         self.ax.set_xlim([0, TIME_LENGTH])
         for channel in noise:
